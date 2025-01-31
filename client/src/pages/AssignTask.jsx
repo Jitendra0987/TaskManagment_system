@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-// import {message} from "antd";
+import {message} from "antd";
 
 
 
@@ -33,7 +33,7 @@ const AssignTask=()=>{
          let api ="http://localhost:8000/admin/assigntask";
          const response= await axios.post(api,{empid:empId, ...input});
          console.log(response.data)
-          // message("Task assign")
+          message("Task assign")
          
         } catch (error) {
          console.log(error)
@@ -64,7 +64,7 @@ const AssignTask=()=>{
         const ans = mydata.map((key)=>{
             return(
                 <>
-            
+           
             <tr>
                 <td>{key.username}</td>
                 <td>{key.email}</td>
@@ -75,6 +75,8 @@ const AssignTask=()=>{
 
                 </td>
             </tr>
+            
+           
             
                 </>
             )
@@ -107,11 +109,8 @@ const AssignTask=()=>{
   </Modal.Footer>
 </Modal>
 
-
-
-
-
         <table className="emptable">
+          <thead>
             <tr>
                 <th>username</th>
                 <th>email</th>
@@ -119,6 +118,7 @@ const AssignTask=()=>{
                 <th></th>
             </tr>
             {ans}
+            </thead>
         </table>
 
         </>

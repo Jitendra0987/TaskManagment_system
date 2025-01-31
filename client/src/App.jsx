@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import CreateUser from "./pages/createUser";
 import AssignTask from "./pages/AssignTask";
+import UserDashboard from "./pages/UserDashboard";
+import DisplayUserTask from "./pages/DisplayUserTask";
 
 
 const App=()=>{
@@ -15,14 +17,19 @@ const App=()=>{
         <Routes>
             <Route path="/" element={<Layout/>}>  
             <Route path="login" element={<Login/>}/> 
-            <Route path="login" element={<Login/>}/> 
             <Route path="admindashboard" element={<AdminDashboard/>}>
             <Route path="createuser"   element={<CreateUser/>}/>
             <Route path="assigntask"   element={<AssignTask/>}/>
             </Route>
+            
 
+            
+            <Route path="userdashboard" element={<UserDashboard/>}>
+            <Route path="displaytask" element={<DisplayUserTask/>}/>
 
             </Route>
+            </Route>
+
         </Routes>
         </BrowserRouter>
 

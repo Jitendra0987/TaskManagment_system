@@ -3,6 +3,7 @@ const app= express();
 const cors= require("cors");
 const mongoose=require("mongoose");
 const adminRoute= require("./routes/route");
+const emplooyeRoute=require("./routes/EmployeeRoute");
 const bodyparser = require('body-parser');
 const PORT = 8000
 
@@ -22,7 +23,7 @@ app.use(bodyparser.json())
 
 
 app.use("/admin", adminRoute);
-
+app.use("/employee",emplooyeRoute);
 
 
 app.listen(PORT, ()=>{

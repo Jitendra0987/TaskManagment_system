@@ -41,13 +41,26 @@ const handelsubmit=async()=>{
     }
         
    }
-   else{
-    message.error("pls select valid option")
+
+   else if(usertype=="employee")       
+  {
+    try {
+      let api="http://localhost:8000/employee/employeelogin";
+      const response= await axios.post(api,{userid:userid, password:password})
+             console.log(response.data)
+        localStorage.setItem("empname",response.data.username)
+        localStorage.setItem("empemail",response.data.email)
+        localStorage.setItem("empid",response.data._id);
+                 message.success("Login Succesfully!")   
+                     navigate("/UserDashboard")
+
+    } catch (error) {
+      message.error(error.response.data.msg)
+    }
   }
+   
+  
 }
-
-
-
 
   return (
     <div className="form-container">
@@ -74,3 +87,5 @@ const handelsubmit=async()=>{
 };
 
 export default Login;
+
+
