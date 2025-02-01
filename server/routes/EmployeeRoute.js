@@ -4,6 +4,8 @@ const employeecontroller=require("../controller/EmployeeController")
 
  route.post("/employeelogin",employeecontroller.employeeLogin);
  route.post("/emptaskdisplay",employeecontroller.empTaskDisplay);
+ route.post("/employeetasksubmit",employeecontroller.empTaskSubmit);
+ 
 
  
 module.exports=route;  

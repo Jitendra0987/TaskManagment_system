@@ -40,7 +40,22 @@ const empTaskDisplay=async(req,res)=>{
 }
 
 
+ const empTaskSubmit=async(req,res)=>{
+           const {taskid, taskstatus}=req.body;
+           console.log(req.body)
+           try {
+
+               const Task=await userTaskAssignModel.findByIdAndUpdate(taskid,{taskstatus:taskstatus , empreports:"submitted"});
+               res.status(200).send("Task successfully submited!!!")
+            
+           } catch (error) {
+                   console.log(error);
+           }
+ }
+
+
 module.exports={
     employeeLogin,
-    empTaskDisplay
+    empTaskDisplay,
+    empTaskSubmit
 }
