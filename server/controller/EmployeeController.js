@@ -42,7 +42,7 @@ const empTaskDisplay=async(req,res)=>{
 
  const empTaskSubmit=async(req,res)=>{
            const {taskid, taskstatus}=req.body;
-           console.log(req.body)
+        //    console.log(req.body)
            try {
 
                const Task=await userTaskAssignModel.findByIdAndUpdate(taskid,{taskstatus:taskstatus , empreports:"submitted"});

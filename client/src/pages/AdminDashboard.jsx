@@ -33,8 +33,8 @@ const AdminDashboard=()=>{
              <div className="sidebar">
                 <h3>Dashboard</h3> 
                 <Link to="createuser">CreateUser</Link> <br />
-                <Link to="assigntask">AssignTask</Link>
-
+                <Link to="assigntask">AssignTask</Link><br />
+                <Link to="showreport">UserReport</Link>
 
              </div>
 

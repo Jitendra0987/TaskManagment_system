@@ -101,9 +101,40 @@ const Datasave=async(req,res)=>{
     }
 
 
+    const ShowReport=async(req,res)=>{ 
+          
+         try {
+          const task =await taskAssignModel.find().populate("empid");
+          res.status(200).send(task)
+          
+         } catch (error) {
+          console.log(error);
+          
+         }
+    }
+
+    const TaskReassign=async(req,res)=>{
+           
+      const {taskid}=req.body
+
+      try {
+
+        const Data=await taskAssignModel.findByIdAndUpdate(taskid,{empreport:"pending"})
+          res.send({msg:"Task succesfully Re Assigned!!!"})
+      } catch (error) {
+        
+        console.log(error);
+        
+      }
+
+    }
+
+
 module.exports={
     Datasave,
     userCreated,
     userDataDisplay,
-    assigntask
+    assigntask,
+    ShowReport,
+    TaskReassign
 }
