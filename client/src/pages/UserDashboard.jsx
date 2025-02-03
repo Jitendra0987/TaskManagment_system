@@ -22,16 +22,20 @@ const UserDashboard=()=>{
     }
     return(
         <>
-        <h1>Employee Dashboard</h1>
-                  
-        
-        
+        <center>
+        <h1 style={{backgroundColor:"white" }}>Employee Dashboard</h1>
+        </center>
         <div className="Home">
 
 <div className="sidebar">
    <h3>Dashboard</h3> 
+    <ul className="sideheding">
+        <li>
+        <Link to="displaytask">Display Tasks</Link>
+        <Link to="resetpassword">Password Reset</Link>
+        </li>
+    </ul>
     
-    <Link to="displaytask">Display Tasks</Link>
    
 
 </div>

@@ -75,7 +75,7 @@ const DisplayUserTask=()=>{
 
     return(
         <>
-        <h1> user task </h1>
+        <h1 style={{fontSize:"30px"}}> User Task </h1>
         <table>
             <thead>
             <tr>
@@ -83,7 +83,8 @@ const DisplayUserTask=()=>{
                 <th>Task Title</th>
                 <th>Description</th>
                 <th>Total Days</th>
-                
+                <th>Select Task</th>
+                <th>Task send</th>
             </tr>
             </thead>
             {ans}

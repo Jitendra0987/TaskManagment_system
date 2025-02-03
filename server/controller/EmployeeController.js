@@ -52,10 +52,36 @@ const empTaskDisplay=async(req,res)=>{
                    console.log(error);
            }
  }
+           
+ const ResetPassword=async(req,res)=>{
+       const {oldpassword,newpassword,empid}=req.body;
+    try {
+        
+           const Data=await EmpModel.findById(empid);
+           console.log(Data)
 
+           if(Data.password !== oldpassword){
+                
+            return res.status(400).json({ message: "Old password is incorrect" })
+           }
+           else if(Data.password = newpassword){
+                 
+            await Data.save();
+
+           }
+           res.json({ message: "Password changed successfully" });
+         
+
+    } catch (error) {
+        res.status(500).json({ message: "Internal Server Error", error });
+        
+    }
+
+ }
 
 module.exports={
     employeeLogin,
     empTaskDisplay,
-    empTaskSubmit
+    empTaskSubmit,
+    ResetPassword
 }

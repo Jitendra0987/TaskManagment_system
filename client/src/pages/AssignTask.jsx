@@ -101,16 +101,16 @@ const AssignTask=()=>{
     <textarea rows="4" cols="50" name="taskDescription" value={input.taskDescription} onChange={handleInput} />
     <br />
     Enter Completion Days:
-    <input type="number" name="compdays" value={input.compdays} onChange={handleInput} />
+    <input type="number" name="compdays" value={input.compdays} onChange={handleInput} style={{width:"100px"}}/>
   </Modal.Body>
 
   <Modal.Footer>
     <Button variant="success" onClick={handleSubmit}>Save!!!</Button>
   </Modal.Footer>
 </Modal>
-
+    <center>
         <table className="emptable">
-          <thead>
+          <thead >
             <tr>
                 <th>username</th>
                 <th>email</th>
@@ -120,7 +120,7 @@ const AssignTask=()=>{
             {ans}
             </thead>
         </table>
-
+        </center>
         </>
     )
 }

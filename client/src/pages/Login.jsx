@@ -58,8 +58,11 @@ const handelsubmit=async()=>{
       message.error(error.response.data.msg)
     }
   }
-   
   
+else{
+  message( "pls select valid option")
+}
+
 }
 
   return (

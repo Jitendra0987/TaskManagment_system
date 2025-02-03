@@ -7,6 +7,7 @@ import AssignTask from "./pages/AssignTask";
 import UserDashboard from "./pages/UserDashboard";
 import DisplayUserTask from "./pages/DisplayUserTask";
 import UserReport from "./pages/userReport";
+import PasswordReset from "./pages/PasswordReset";
 
 
 const App=()=>{
@@ -28,6 +29,7 @@ const App=()=>{
             
             <Route path="userdashboard" element={<UserDashboard/>}>
             <Route path="displaytask" element={<DisplayUserTask/>}/>
+            <Route path="resetpassword" element={<PasswordReset/>}/>
 
             </Route>
             </Route>

@@ -43,7 +43,7 @@ try {
     const ans=myData.map((key)=>{
          return(
             <>
-            <tr>
+            <tr className="report">
                 <td>{key.empid.username}</td>
                 <td>{key.empid.designation}</td>
                 <td>{key.empid.email}</td>
@@ -75,7 +75,7 @@ try {
   
     return(
         <>
-        <table>
+        <table className="userReport">
             <thead>
                 <tr>
                     <th>Employee Name</th>
@@ -85,7 +85,8 @@ try {
                     <th>Assign Days</th>
                     <th>Task Status</th>
                     <th>Report</th>
-                    <th> </th>
+                    <th> task submit </th>
+                    <th> Reassign</th>
                 </tr>
             </thead>
             {ans}
